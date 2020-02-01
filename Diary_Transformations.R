@@ -68,7 +68,7 @@ event_swimlanes <- ggplot(clean.data,
                           aes(x=Date,
                               y=TimeTS,
                               label = Phase,
-                              colour = `Feeling Outcome`)
+                              colour = FeelingOutcome)
                           )+
   labs(x = "Date", 
        y = "Time of the Day as fraction of Hour in a 24 hour Format",
@@ -105,7 +105,7 @@ df.dist <- clean.data %>%
 
 freq.dist <- ggplot(clean.data,
                     aes(x = Date))+
-  geom_histogram(aes(fill = `Feeling Outcome`),
+  geom_histogram(aes(fill = FeelingOutcome),
                  alpha = 0.6,
                  binwidth = 0.5) +
   labs(x = "Date",
