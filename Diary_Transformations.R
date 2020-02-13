@@ -71,8 +71,8 @@ event_swimlanes <- ggplot(clean.data,
                               colour = FeelingOutcome)
                           )+
   labs(x = "Date", 
-       y = "Time of the Day as fraction of Hour in a 24 hour Format",
-       title = "Freq distribution by Date and Phase of the Day",
+       y = "Time of the Day in a 24 hour Format",
+       title = "Distribution by Date, Feeling Ouctome and Phase of the Day",
        colour = NULL) +
   geom_rect(data=df.phase, 
             inherit.aes = FALSE, 
@@ -82,7 +82,7 @@ event_swimlanes <- ggplot(clean.data,
                 ymax=end,
                 fill=phase),
             alpha=0.4) +
-  scale_fill_manual(values=c("Morning" = "orange", "Afternoon" = "blue", "Evening" = "pink", "Night" = "black"),
+  scale_fill_manual(values=c("Morning" = "orange", "Afternoon" = "red", "Evening" = "pink", "Night" = "grey"),
                     labels = c("Morning","Afternoon","Evening", "Night")
                     )+
   labs(fill = NULL)+
